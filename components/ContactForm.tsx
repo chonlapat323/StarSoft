@@ -1,6 +1,7 @@
 "use client";
 
 import { services, site } from "@/content/site";
+import Select from "./Select";
 
 export default function ContactForm() {
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -36,20 +37,7 @@ export default function ContactForm() {
           <span>เบอร์โทร</span>
           <input name="phone" type="tel" autoComplete="tel" />
         </label>
-        <label className="field">
-          <span>ประเภทงาน</span>
-          <select name="type" defaultValue="">
-            <option value="" disabled>
-              เลือกบริการ
-            </option>
-            {services.map((s) => (
-              <option key={s.slug} value={s.th}>
-                {s.th}
-              </option>
-            ))}
-            <option value="อื่นๆ">อื่นๆ</option>
-          </select>
-        </label>
+        <Select name="type" label="ประเภทงาน" placeholder="เลือกบริการ" options={[...services.map((s) => s.th), "อื่นๆ"]} />
       </div>
       <label className="field">
         <span>รายละเอียดโปรเจกต์</span>
