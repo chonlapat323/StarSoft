@@ -93,7 +93,7 @@ export default function Home() {
           <div className="project-grid">
             {projects.slice(0, 3).map((p, i) => (
               <Reveal key={p.title} delay={120 + i * 90}>
-                <ProjectCard project={p} index={i} />
+                <ProjectCard project={p} />
               </Reveal>
             ))}
           </div>

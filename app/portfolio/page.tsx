@@ -31,7 +31,7 @@ export default function PortfolioPage() {
           <div className="project-grid">
             {projects.map((p, i) => (
               <Reveal key={p.title} delay={(i % 3) * 90}>
-                <ProjectCard project={p} index={i} />
+                <ProjectCard project={p} />
               </Reveal>
             ))}
           </div>
