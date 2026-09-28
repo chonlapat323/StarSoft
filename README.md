@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# StarSoft
 
-## Getting Started
+เว็บไซต์บริษัท StarSoft — รับพัฒนาซอฟต์แวร์ ธีมหลักเป็นหลุมดำจากอนุภาค (Three.js) ที่ตอบสนองต่อเมาส์และการเลื่อนหน้า
 
-First, run the development server:
+**Stack:** Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS 4 · Three.js
+
+## เริ่มใช้งาน
+
+ต้องใช้ Node.js 20 ขึ้นไป
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # เปิด http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build สำหรับขึ้น server:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm start        # รันเวอร์ชัน production ที่พอร์ต 3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+ทุกหน้าเป็น static จึง deploy ได้ทั้ง Vercel และ server Node.js ทั่วไป
 
-## Learn More
+## หน้าเว็บ
 
-To learn more about Next.js, take a look at the following resources:
+| หน้า | ไฟล์ |
+| --- | --- |
+| หน้าแรก | `app/page.tsx` |
+| บริการ | `app/services/page.tsx` |
+| ผลงาน | `app/portfolio/page.tsx` |
+| ติดต่อ | `app/contact/page.tsx` |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## แก้เนื้อหา
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+ข้อความทั้งหมด (บริการ, ผลงาน, ข้อมูลติดต่อ, หัวเรื่อง) อยู่ที่ไฟล์เดียว: **`content/site.ts`**
 
-## Deploy on Vercel
+> ⚠️ ยังเป็นข้อมูลร่าง — อีเมล/เบอร์โทรเป็นค่าสมมติ และผลงานทั้ง 6 ชิ้นเป็นตัวอย่าง (มีป้าย "ตัวอย่าง") ต้องแทนด้วยข้อมูลจริงก่อนเปิดใช้งาน
+>
+> ฟอร์มติดต่อตอนนี้เปิดแอปอีเมลของผู้ใช้ (`mailto:`) ยังไม่ได้เชื่อมระบบหลังบ้าน
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ธีมอนุภาค
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| การกระทำ | ผล |
+| --- | --- |
+| ขยับเมาส์ | อนุภาคถูกดึงเข้าหาและโคจรรอบเมาส์ |
+| คลิก | คลื่นระเบิด |
+| กดค้าง | แรงดึงแรงขึ้น |
+| ปล่อย | เหวี่ยงอนุภาคออก |
+| เลื่อนหน้า | อนุภาคเปลี่ยนรูปตามแต่ละ section |
+
+รูปทรงของอนุภาคกำหนดจาก attribute บน `<section>`:
+
+```tsx
+<section data-cosmos="galaxy" data-cosmos-x="0.5">
+```
+
+- `data-cosmos` — รูปทรง: `drift`, `sphere`, `galaxy`, `ring`, `lattice`, `helix` หรือ `text:คำภาษาอังกฤษ` (เช่น `text:HELLO`)
+- `data-cosmos-x` / `data-cosmos-y` — เลื่อนตำแหน่ง (-1 ถึง 1 ของความกว้าง/สูงจอ)
+- `data-cosmos-strength` — แรงดึงเข้ารูปทรง (ค่าน้อย = หลวมๆ)
+
+โค้ดธีมอยู่ที่ `lib/cosmos/` — ฟิสิกส์คำนวณบน GPU มือถือจะลดจำนวนอนุภาคให้อัตโนมัติ และรองรับการตั้งค่าลดการเคลื่อนไหว (reduced motion) ถ้าเครื่องไม่รองรับ WebGL จะแสดงพื้นหลังดาวแบบนิ่งแทน
