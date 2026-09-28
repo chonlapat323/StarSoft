@@ -22,6 +22,19 @@ npm start        # รันเวอร์ชัน production ที่พอ�
 
 ทุกหน้าเป็น static จึง deploy ได้ทั้ง Vercel และ server Node.js ทั่วไป
 
+### Deploy ด้วย pm2
+
+```bash
+chmod +x scripts/find-port.sh
+PORT=$(./scripts/find-port.sh)          # หาพอร์ตว่างช่วง 3100–3199
+npm ci && npm run build
+PORT=$PORT pm2 start ecosystem.config.cjs
+pm2 save
+```
+
+อัปเดตโค้ด: `git pull && npm ci && npm run build && pm2 restart starsoft`
+(พอร์ตถูกจำไว้ใน pm2 แล้ว ไม่ต้องหาใหม่)
+
 ## หน้าเว็บ
 
 | หน้า | ไฟล์ |
