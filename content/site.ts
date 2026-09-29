@@ -102,7 +102,7 @@ export type Project = {
   solution: string;
   features: { title: string; body: string }[];
   stack: string[];
-  images: [ProjectImage, ProjectImage];
+  images: [ProjectImage, ...ProjectImage[]];
   placeholder: boolean;
 };
 
@@ -131,6 +131,8 @@ export const projects: Project[] = [
     images: [
       { src: "/work/qiew.webp", alt: "หน้าตารางนัดของระบบ Qiew แสดงนัดหมายแยกตามพนักงาน", caption: "หน้าตารางนัดวันนี้ แยกตามพนักงาน พร้อมคิวถัดไป" },
       { src: "/work/qiew-2.webp", alt: "หน้าจอจองคิวผ่าน LINE บนมือถือ", caption: "ลูกค้าเลือกบริการและเวลาที่ว่างผ่าน LINE" },
+      { src: "/work/qiew-3.webp", alt: "หน้าฐานข้อมูลลูกค้าพร้อมโปรไฟล์และประวัติการใช้บริการ", caption: "ฐานข้อมูลลูกค้า แบ่งกลุ่ม VIP และดูประวัติการใช้บริการ" },
+      { src: "/work/qiew-4.webp", alt: "ข้อความเตือนนัดใน LINE และแอปสำหรับพนักงาน", caption: "ข้อความเตือนนัดใน LINE และแอปดูงานของพนักงาน" },
     ],
     placeholder: true,
   },
@@ -157,6 +159,8 @@ export const projects: Project[] = [
     images: [
       { src: "/work/pointly.webp", alt: "แอป Pointly หน้ารางวัล หน้าแรก และหน้าสแกน QR", caption: "หน้าแรก บัตรสมาชิก รายการรางวัล และ QR สะสมแต้ม" },
       { src: "/work/pointly-2.webp", alt: "หน้าประวัติแต้มและคูปองส่วนลดในแอป Pointly", caption: "ประวัติแต้มและคูปองพร้อมใช้งาน" },
+      { src: "/work/pointly-3.webp", alt: "หลังบ้านร้านค้าแสดงสถิติสมาชิกและแคมเปญ", caption: "หลังบ้านร้านค้า ดูสถิติสมาชิกและจัดการแคมเปญ" },
+      { src: "/work/pointly-4.webp", alt: "หน้าสมัครสมาชิกด้วย OTP และสิทธิพิเศษตามระดับ", caption: "สมัครสมาชิกด้วยเบอร์โทร และสิทธิพิเศษของแต่ละระดับ" },
     ],
     placeholder: true,
   },
@@ -183,6 +187,8 @@ export const projects: Project[] = [
     images: [
       { src: "/work/salesight.webp", alt: "แดชบอร์ด Salesight แสดงยอดขายรายวันและยอดขายตามช่องทาง", caption: "ภาพรวมยอดขาย กราฟรายวัน และสัดส่วนตามช่องทาง" },
       { src: "/work/salesight-2.webp", alt: "แอปมือถือ Salesight แสดงยอดขายวันนี้และการแจ้งเตือน", caption: "แอปมือถือสำหรับเจ้าของธุรกิจ พร้อมการแจ้งเตือน" },
+      { src: "/work/salesight-3.webp", alt: "แผนภาพช่วงเวลาขายดี สินค้าขายดี และยอดขายตามจังหวัด", caption: "เจาะลึกช่วงเวลาขายดี สินค้า และพื้นที่" },
+      { src: "/work/salesight-4.webp", alt: "หน้าส่งออกรายงานยอดขายประจำเดือน", caption: "รายงานประจำเดือน ส่งออกเป็น PDF หรือ Excel" },
     ],
     placeholder: true,
   },
@@ -209,6 +215,8 @@ export const projects: Project[] = [
     images: [
       { src: "/work/silawat.webp", alt: "หน้าแรกเว็บไซต์ศิลาวัฒน์ คอนสตรัคชั่น บนเดสก์ท็อปและมือถือ", caption: "หน้าแรกบนเดสก์ท็อปและมือถือ" },
       { src: "/work/silawat-2.webp", alt: "ระบบจัดการเนื้อหาสำหรับแก้ไขข้อมูลโครงการ", caption: "ระบบจัดการเนื้อหาสำหรับทีมงาน" },
+      { src: "/work/silawat-3.webp", alt: "หน้ารวมโครงการที่ส่งมอบแล้ว กรองตามประเภท", caption: "หน้ารวมผลงาน กรองตามประเภทโครงการ" },
+      { src: "/work/silawat-4.webp", alt: "หน้าขอใบเสนอราคาพร้อมแนบแบบก่อสร้าง", caption: "ขอใบเสนอราคาออนไลน์ พร้อมแนบแบบก่อสร้าง" },
     ],
     placeholder: true,
   },
@@ -235,6 +243,8 @@ export const projects: Project[] = [
     images: [
       { src: "/work/stockr.webp", alt: "หน้าสินค้าคงคลังของระบบ Stockr พร้อมสถานะสต็อก", caption: "รายการสินค้าคงคลังพร้อมสถานะและระดับสต็อก" },
       { src: "/work/stockr-2.webp", alt: "แอปมือถือสแกนบาร์โค้ดรับสินค้าเข้าและดูรายละเอียดสินค้า", caption: "สแกนบาร์โค้ดรับสินค้าเข้า และดูความเคลื่อนไหว" },
+      { src: "/work/stockr-3.webp", alt: "หน้าสร้างใบสั่งซื้อพร้อมขั้นตอนการอนุมัติ", caption: "สร้างใบสั่งซื้อจากจุดสั่งซื้อ พร้อมขั้นตอนอนุมัติ" },
+      { src: "/work/stockr-4.webp", alt: "แอปตรวจนับสต็อกและบันทึกยอดที่ไม่ตรง", caption: "ตรวจนับสต็อกบนมือถือ และบันทึกสาเหตุยอดไม่ตรง" },
     ],
     placeholder: true,
   },
@@ -261,6 +271,8 @@ export const projects: Project[] = [
     images: [
       { src: "/work/learnly.webp", alt: "แอป Learnly หน้าเล่นวิดีโอ หน้าแรก และแบบทดสอบ", caption: "หน้าแรก วิดีโอบทเรียน และแบบทดสอบท้ายบท" },
       { src: "/work/learnly-2.webp", alt: "หน้า Studio สำหรับผู้สอนแสดงสถิติผู้เรียนและคอร์ส", caption: "Studio สำหรับผู้สอน ติดตามผู้เรียนและรายได้" },
+      { src: "/work/learnly-3.webp", alt: "หน้าขายคอร์สพร้อมราคา เนื้อหา และสิ่งที่จะได้เรียนรู้", caption: "หน้าขายคอร์ส พร้อมตัวอย่างบทเรียนและช่องทางชำระเงิน" },
+      { src: "/work/learnly-4.webp", alt: "ใบประกาศนียบัตรและหน้าความคืบหน้าของผู้เรียน", caption: "ใบประกาศเมื่อเรียนจบ และหน้าติดตามความคืบหน้า" },
     ],
     placeholder: true,
   },

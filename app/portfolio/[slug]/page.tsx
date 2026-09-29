@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import CtaSection from "@/components/CtaSection";
+import Gallery from "@/components/Gallery";
 import Reveal from "@/components/Reveal";
 import StarMark from "@/components/StarMark";
 import { getProject, projects, type ProjectImage } from "@/content/site";
@@ -40,6 +41,7 @@ export default async function ProjectPage({ params }: PageProps<"/portfolio/[slu
   const project = getProject((await params).slug);
   if (!project) notFound();
 
+  const [cover, ...gallery] = project.images;
   const index = projects.indexOf(project);
   const next = projects[(index + 1) % projects.length];
   const story = [
@@ -87,7 +89,7 @@ export default async function ProjectPage({ params }: PageProps<"/portfolio/[slu
 
       <section className="section-media" data-cosmos="lattice" data-cosmos-strength="0.9" data-cosmos-y="-0.2">
         <Reveal>
-          <Figure image={project.images[0]} preload />
+          <Figure image={cover} preload />
         </Reveal>
       </section>
 
@@ -125,11 +127,21 @@ export default async function ProjectPage({ params }: PageProps<"/portfolio/[slu
         </div>
       </section>
 
-      <section className="section-media" data-cosmos="drift">
-        <Reveal>
-          <Figure image={project.images[1]} />
-        </Reveal>
-      </section>
+      {gallery.length > 0 && (
+        <section className="section-media" data-cosmos="drift">
+          <div className="gallery-head">
+            <Reveal>
+              <p className="eyebrow">05 — Screens</p>
+            </Reveal>
+            <Reveal delay={80}>
+              <h2 className="h2">หน้าจออื่นๆ ในระบบ</h2>
+            </Reveal>
+          </div>
+          <Reveal delay={120}>
+            <Gallery images={gallery} />
+          </Reveal>
+        </section>
+      )}
 
       <section className="section-media next-project-wrap" data-cosmos="galaxy" data-cosmos-strength="1.2">
         <Reveal>
