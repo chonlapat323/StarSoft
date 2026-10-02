@@ -1,15 +1,15 @@
 export type Shape = "drift" | "sphere" | "galaxy" | "ring" | "lattice" | "helix" | `text:${string}`;
 
 export const site = {
-  name: "StarSoft",
+  name: "ATC Solutions",
   tagline: "Software with gravity.",
   description:
-    "StarSoft รับพัฒนาซอฟต์แวร์ครบวงจร — เว็บแอปพลิเคชัน แอปมือถือ ซอฟต์แวร์เฉพาะทาง ออกแบบ UI/UX และดูแลระบบหลังส่งมอบ",
+    "ATC Solutions รับพัฒนาซอฟต์แวร์ครบวงจร — เว็บแอปพลิเคชัน แอปมือถือ ซอฟต์แวร์เฉพาะทาง ออกแบบ UI/UX และดูแลระบบหลังส่งมอบ",
   // Placeholder contact details — replace before launch.
   contact: {
-    email: "hello@starsoft.example",
+    email: "hello@atcsolutions.example",
     phone: "0X-XXX-XXXX",
-    line: "@starsoft",
+    line: "@atcsolutions",
     address: "กรุงเทพมหานคร ประเทศไทย",
     hours: "จันทร์–ศุกร์ 09:00–18:00",
   },
@@ -21,7 +21,7 @@ export const site = {
 };
 
 export const hero = {
-  eyebrow: "StarSoft — Software Development Studio",
+  eyebrow: "ATC Solutions — Software Development Studio",
   headline: "Software with gravity.",
   lead: "เราออกแบบและพัฒนาซอฟต์แวร์ที่ดึงดูดผู้ใช้ และพาธุรกิจของคุณเติบโต ตั้งแต่ไอเดียแรกจนถึงวันที่ระบบออนไลน์",
   primary: { href: "/contact", label: "เริ่มโปรเจกต์" },

@@ -60,7 +60,7 @@ export default function Loader({ progress, done, onReveal }: Props) {
 
   return (
     <div className="loader" data-phase={phase} role="status" aria-live="polite" aria-busy={phase === "loading"}>
-      <span className="loader-brand">StarSoft</span>
+      <span className="loader-brand">ATC Solutions</span>
       <span className="loader-line">
         <span ref={lineRef} />
       </span>

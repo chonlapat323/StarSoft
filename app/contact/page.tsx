@@ -5,7 +5,7 @@ import { site } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "ติดต่อ",
-  description: "ติดต่อ StarSoft เพื่อปรึกษาและเริ่มโปรเจกต์ซอฟต์แวร์",
+  description: "ติดต่อ ATC Solutions เพื่อปรึกษาและเริ่มโปรเจกต์ซอฟต์แวร์",
 };
 
 const d = (ms: number) => ({ "--d": `${ms}ms` }) as React.CSSProperties;

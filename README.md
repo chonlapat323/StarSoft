@@ -1,6 +1,6 @@
-# StarSoft
+# ATC Solutions
 
-เว็บไซต์บริษัท StarSoft — รับพัฒนาซอฟต์แวร์ ธีมหลักเป็นหลุมดำจากอนุภาค (Three.js) ที่ตอบสนองต่อเมาส์และการเลื่อนหน้า
+เว็บไซต์บริษัท ATC Solutions — รับพัฒนาซอฟต์แวร์ ธีมหลักเป็นหลุมดำจากอนุภาค (Three.js) ที่ตอบสนองต่อเมาส์และการเลื่อนหน้า
 
 **Stack:** Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS 4 · Three.js
 

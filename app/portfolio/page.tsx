@@ -6,7 +6,7 @@ import { projects } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "ผลงาน",
-  description: "ผลงานพัฒนาซอฟต์แวร์ของ StarSoft",
+  description: "ผลงานพัฒนาซอฟต์แวร์ของ ATC Solutions",
 };
 
 const d = (ms: number) => ({ "--d": `${ms}ms` }) as React.CSSProperties;
@@ -14,7 +14,7 @@ const d = (ms: number) => ({ "--d": `${ms}ms` }) as React.CSSProperties;
 export default function PortfolioPage() {
   return (
     <>
-      <section className="page-hero" data-cosmos="text:STARSOFT" data-cosmos-y="0.28">
+      <section className="page-hero" data-cosmos="text:ATC SOLUTIONS" data-cosmos-y="0.28">
         <p className="eyebrow intro-fade" style={d(100)}>
           Work
         </p>

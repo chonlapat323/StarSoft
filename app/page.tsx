@@ -36,7 +36,7 @@ export default function Home() {
       <section className="section" data-cosmos="sphere" data-cosmos-x="0.5">
         <div className="section-inner">
           <Reveal>
-            <p className="eyebrow">01 — Why StarSoft</p>
+            <p className="eyebrow">01 — Why ATC Solutions</p>
           </Reveal>
           <Reveal delay={80}>
             <h2 className="h2">ทุกระบบที่ดี เริ่มจากแรงดึงดูดของไอเดียเดียว</h2>

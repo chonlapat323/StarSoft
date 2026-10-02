@@ -3,7 +3,7 @@ import Reveal from "./Reveal";
 
 export default function CtaSection() {
   return (
-    <section className="section cta" data-cosmos="text:STARSOFT" data-cosmos-y="0.3">
+    <section className="section cta" data-cosmos="text:ATC SOLUTIONS" data-cosmos-y="0.3">
       <div className="cta-inner">
         <Reveal>
           <p className="eyebrow">Next — Let’s talk</p>
